@@ -146,7 +146,7 @@ lock_acquire(struct lock *lock)
 	while (lock->holder != NULL) {
 		thread_sleep(lock);
 	}
-
+	//kprintf(lock->holder);
 	lock->holder = curthread;
 
 	splx(spl);
